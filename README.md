@@ -25,6 +25,8 @@ npm install
 npm run serve
 ```
 
+เว็บจะรันที่ http://localhost:8080
+
 4. หรือ Build Bundle
 
 ```
