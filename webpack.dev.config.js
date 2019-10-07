@@ -1,9 +1,8 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     entry: path.join(__dirname, 'src/index.js'),
     module: {
         rules: [
@@ -21,12 +20,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
         new htmlWebpackPlugin({
             template: path.join(__dirname, 'public/index.html')
         })
     ],
     devServer: {
+        hot: true,
+        compress: true,
         port: 8080
     }
 }
